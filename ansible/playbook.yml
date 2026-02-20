@@ -1,0 +1,12 @@
+---
+- name: Setup Neovim environment
+  hosts: test
+  become: true
+  vars:
+    nvim_user: "{{ ansible_user_id }}"
+    nvim_home: "{{ ansible_env.HOME }}"
+    nvim_version: "0.11.6"  # bump as needed
+    node_major: "22"
+
+  roles:
+    - neovim
